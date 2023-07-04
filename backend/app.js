@@ -8,15 +8,14 @@ var cors = require('cors');
 var app = express();
 
 var productsRouter = require('./routes/prodotti');
-var usersRouter = require('./routes/utent');
+var usersRouter = require('./routes/ordini');
 
-app.use('/api/prodotti',productsRouter);
-app.use('/api/utenti',usersRouter);
+
 
 app.use(cors({
   origin: "*",
   methods: ['GET','POST','PATCH','DELETE','PUT'],
-  allowedHeaders: 'Content-Type, Authorization, Origin, X-Requested-With, Accept',
+  allowedHeaders: "Content-Type, Authorization, Origin, X-Requested-With, Accept",
 }));
 
 // view engine setup
@@ -29,7 +28,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/api/prodotti',productsRouter);
+app.use('/api/utenti',usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

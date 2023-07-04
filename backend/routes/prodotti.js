@@ -26,18 +26,20 @@ const { database } = require('../config/helpers');
     }])
     .withFields(field=['c.titolo as categoria',
     'p.titolo as nome',
+    'p.descrizione',
     'p.prezzo',
-    'p.quantità',
+    'p.quantita',
     'p.immagine_principale',
+    'p.immagini_secondarie',
     'p.id'
   ])
   .slice(startValue, endValue)
   .sort({id: .1})
   .getAll()
   .then(prods =>{
-    if(prods.lenght > 0){
+    if(prods.length>0){
       res.status(200).json({
-        count: prods.lenght,
+        count: prods.length,
         products: prods
       });
     }else{
@@ -57,6 +59,7 @@ const { database } = require('../config/helpers');
     }])
     .withFields(field=['c.titolo as categoria',
     'p.titolo as nome',
+    'p.descrizione',
     'p.prezzo',
     'p.quantità',
     'p.immagine_principale',
@@ -101,6 +104,7 @@ router.get('/categoria/:nomeCat',(req,res)=>{
     }])
     .withFields(field=['c.titolo as categoria',
     'p.titolo as nome',
+    'p.descrizione',
     'p.prezzo',
     'p.quantità',
     'p.immagine_principale',
@@ -110,9 +114,9 @@ router.get('/categoria/:nomeCat',(req,res)=>{
   .sort({id: .1})
   .getAll()
   .then(prods =>{
-    if(prods.lenght > 0){
+    if(prods.length > 0){
       res.status(200).json({
-        count: prods.lenght,
+        count: prods.length,
         products: prods
       });
     }else{

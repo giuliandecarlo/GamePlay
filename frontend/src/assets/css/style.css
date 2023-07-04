@@ -413,7 +413,7 @@ textarea.input {
 #top-header {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #1E1F29;
+  background-color: #FFF;
 }
 
 .header-links li {
@@ -427,7 +427,7 @@ textarea.input {
 }
 
 .header-links li a {
-  color: #FFF;
+  color: #2B2D42;
 }
 
 .header-links li a:hover {
@@ -446,7 +446,7 @@ textarea.input {
 #header {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #15161D;
+  background-color: #FFF;
 }
 
 .header-logo {
@@ -511,7 +511,7 @@ textarea.input {
   position: relative;
   width: 90px;
   text-align: center;
-  color: #FFF;
+  color: #2B2D42;
 }
 
 .header-ctn>div>a>i {
