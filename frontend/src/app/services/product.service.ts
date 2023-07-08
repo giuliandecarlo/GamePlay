@@ -21,10 +21,14 @@ export class ProductService {
 
 // Funzione per ottenere un singolo prodotto dal backend
 getSingleProduct(id:number){
-  return this.http.get<any>(this.SERVER_URL+'/products'+id);
+  return this.http.get<any>(this.SERVER_URL+'/prodotti/'+id);
 }
 // Funzione per ottenere prodotti di una determinata categoria
 getProductFromCategory(catName:string){
-  return this.http.get<any>(this.SERVER_URL+'/prodotti/category/'+catName);
+  return this.http.get<any>(this.SERVER_URL+'/prodotti/categoria/'+catName);
+}
+removeQuantity(id:number){
+  console.log(id)
+  return this.http.patch<any>(this.SERVER_URL+'/prodotti/a/'+id,{});
 }
 }

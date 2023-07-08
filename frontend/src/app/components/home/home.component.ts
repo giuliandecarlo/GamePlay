@@ -21,7 +21,10 @@ ngOnInit(): void {
 
     });
   }
-selectProduct(id:Number){
+selectProduct(id:number){
   this.router.navigate(['/product',id]).then();
+}
+ShopNow(id:number){
+  this.router.navigate(['/checkout',id]).then();
 }
 }

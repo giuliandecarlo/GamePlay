@@ -51,7 +51,6 @@ const { database } = require('../config/helpers');
 // Si ottiene il singolo prodotto:
   router.get('/:prodId',(req,res)=> {
     let idProdotto = req.params.prodId;
-
     database.table('prodotti as p')
     .join([{
       table: 'categorie as c',
@@ -61,7 +60,7 @@ const { database } = require('../config/helpers');
     'p.titolo as nome',
     'p.descrizione',
     'p.prezzo',
-    'p.quantità',
+    'p.quantita',
     'p.immagine_principale',
     'p.immagini_secondarie',
     'p.id'
@@ -106,7 +105,7 @@ router.get('/categoria/:nomeCat',(req,res)=>{
     'p.titolo as nome',
     'p.descrizione',
     'p.prezzo',
-    'p.quantità',
+    'p.quantita',
     'p.immagine_principale',
     'p.id'
   ])
@@ -125,5 +124,12 @@ router.get('/categoria/:nomeCat',(req,res)=>{
   }).catch(err => console.log(err));
   });
 
+// Si modifica la quantità di prodotti dopo un ordine
+router.patch('/a/:prodId',async(req,res)=> {
+  let prodId = req.params.prodId;
+  let idp = await database.table('prodotti').filter({id:prodId}).get();
+  database.table('prodotti').filter({id: prodId}).update({quantita:idp.quantita-1})
+  .then(result =>res.json('Quantità modificata')).catch(err => res.json(err));
+});
 
 module.exports = router;

@@ -1,1 +1,110 @@
-<p>checkout works!</p>
+<p>{{product.id}}</p>
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-7">
+						<!-- Billing Details -->
+						<div class="billing-details">
+							<div class="section-title">
+								<h3 class="title">Dati di spedizione</h3>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="first-name" placeholder="Nome">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="last-name" placeholder="Cognome">
+							</div>
+							<div class="form-group">
+								<input class="input" type="email" name="email" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="address" placeholder="Indirizzo">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="city" placeholder="Città">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="country" placeholder="Nazione">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="zip-code" placeholder="CAP">
+							</div>
+							<div class="form-group">
+								<input class="input" type="tel" name="tel" placeholder="Cellulare">
+							</div>
+							<div class="form-group">
+							</div>
+						</div>
+						<!-- /Billing Details -->
+
+						<!-- Order notes -->
+						<div class="order-notes">
+							<textarea class="input" placeholder="Note aggiuntive"></textarea>
+						</div>
+						<!-- /Order notes -->
+					</div>
+
+					<!-- Order Details -->
+					<div class="col-md-5 order-details">
+						<div class="section-title text-center">
+							<h3 class="title">Il tuo ordine</h3>
+						</div>
+						<div class="order-summary">
+							<div class="order-col">
+								<div><strong>PRODOTTO</strong></div>
+								<div><strong>PREZZO</strong></div>
+							</div>
+							<div class="order-products">
+								<div class="order-col">
+									<div>1x {{product.nome}}</div>
+									<div>{{product.prezzo}}€</div>
+								</div>
+							</div>
+							<div class="order-col">
+								<div>Spedizione</div>
+								<div><strong>GRATIS</strong></div>
+							</div>
+							<div class="order-col">
+								<div><strong>TOTALE</strong></div>
+								<div><strong class="order-total">{{product.prezzo}}€</strong></div>
+							</div>
+						</div>
+                        <div class="row">
+                            <div class="section-title">
+								<h4 class="title">Dati per il pagamento</h4>
+							</div>
+                            <div class="form-group col-sm-6">
+                              <input id="card-holder" type="text" class="form-control" placeholder="Proprietario carta" aria-label="Card Holder" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="form-group col-sm-5">
+                              <div class="input-group expiration-date">
+                                <input type="number" class="form-control" placeholder="MM" aria-label="MM" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" placeholder="YY" aria-label="YY" aria-describedby="basic-addon1">
+                              </div>
+                            </div>
+                            <div class="form-group col-sm-8">
+                              <input id="card-number" type="number" class="form-control" placeholder="Numero carta" aria-label="Card Holder" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="form-group col-sm-4">
+                              <input id="cvc" type="number" class="form-control" placeholder="CVV" aria-label="Card Holder" aria-describedby="basic-addon1">
+                            </div>
+						<div class="input-checkbox">
+							<input type="checkbox" id="terms">
+							<label for="terms">
+								<span></span>
+								Ho letto e accetto <a href="#">termini e condizioni</a> del sito 
+							</label>
+						</div>
+						<button class="btn btn-danger" (click)="Complete(product.id)">Ordina</button>
+					</div>
+					<!-- /Order Details -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->

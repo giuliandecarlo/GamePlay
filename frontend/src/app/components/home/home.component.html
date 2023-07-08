@@ -86,8 +86,8 @@
                                         <div class="col-md-6">
                                             <button class="btn btn-danger"
                                                 [class.disabled]="p.quantita<1"
-                                                [class.btn-outline-danger]="p.quantita < 1">
-                                                {{p.quantita <1 ? "Articolo terminato" :"Aggiungi al Carrello"}}
+                                                [class.btn-outline-danger]="p.quantita < 1" (click)="p.quantita>0 && ShopNow(p.id)">
+                                                {{p.quantita <1 ? "Articolo terminato" :"Acquista immediatamente"}}
                                             </button>
                                         </div>
                                     </div>
@@ -115,31 +115,31 @@
 								<li>
 									<div>
 										<h3>02</h3>
-										<span>Days</span>
+										<span>Giorni</span>
 									</div>
 								</li>
 								<li>
 									<div>
-										<h3>10</h3>
-										<span>Hours</span>
+										<h3>17</h3>
+										<span>Ore</span>
 									</div>
 								</li>
 								<li>
 									<div>
-										<h3>34</h3>
-										<span>Mins</span>
+										<h3>30</h3>
+										<span>Minuti</span>
 									</div>
 								</li>
 								<li>
 									<div>
 										<h3>60</h3>
-										<span>Secs</span>
+										<span>Sec</span>
 									</div>
 								</li>
 							</ul>
-							<h2 class="text-uppercase">hot deal this week</h2>
-							<p>New Collection Up to 50% OFF</p>
-							<a class="primary-btn cta-btn" href="#">Shop now</a>
+							<h2 class="text-uppercase">Sconti per un periodo limitato</h2>
+							<p>Giochi PC e Accessori in SCONTO!!</p>
+							<a class="primary-btn cta-btn" href="#">Acquista ora</a>
 						</div>
 					</div>
 				</div>
