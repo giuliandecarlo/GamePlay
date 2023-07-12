@@ -12,21 +12,16 @@ export class OrderService {
 
 
 
-    constructor(private http: HttpClient,
-                private productService: ProductService,
-                private orderService: OrderService){}
+    constructor(private http: HttpClient){}
 
     getSingleOrder(IdOrdine: number){
         return this.http.get<any>(this.SERVER_URL+'/ordini'+IdOrdine)
     }
+    getAllOrders(){
+        return this.http.get<any>(this.SERVER_URL+'/ordini')
+    }
+    newOrder(id:number){
+        return this.http.post<any>(this.SERVER_URL+'/ordini/new',{idProd:id}).subscribe();
+    }
 }
 
-interface ProductResponseModel {
-    id: number;
-    titolo: string;
-    descrizione: string;
-    prezzo: number;
-    quantitaOrdinata: number;
-    immagine_principale: string;
-
-}

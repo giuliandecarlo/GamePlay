@@ -28,7 +28,18 @@ getProductFromCategory(catName:string){
   return this.http.get<any>(this.SERVER_URL+'/prodotti/categoria/'+catName);
 }
 removeQuantity(id:number){
-  console.log(id)
-  return this.http.patch<any>(this.SERVER_URL+'/prodotti/a/'+id,{});
+  return this.http.patch<any>(this.SERVER_URL+'/prodotti/sold/'+id,{});
+}
+editProduct(editing:any){
+  return this.http.patch<any>(this.SERVER_URL+'/prodotti/edit',editing).subscribe();
+}
+newProduct(newP:any){
+  return this.http.post<any>(this.SERVER_URL+'/prodotti/new',newP).subscribe();
+}
+deleteProduct(id:number){
+  return this.http.delete<any>(this.SERVER_URL+'/prodotti/del/'+id).subscribe();
+}
+getSearchProducts(keyword:any){
+  return this.http.get<any>(this.SERVER_URL+'/prodotti/search/'+keyword);
 }
 }

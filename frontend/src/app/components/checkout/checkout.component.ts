@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { map } from 'rxjs';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,6 +13,7 @@ export class CheckoutComponent {
 
   constructor(private productService: ProductService,
     private actrouter: ActivatedRoute,
+    private orderService: OrderService,
     private router: Router){}
 
   id: any;
@@ -34,6 +36,7 @@ export class CheckoutComponent {
       console.log(resu);
       if(resu === 'Quantità modificata'){
         this.router.navigate(['/thankyou/']).then();
+        this.orderService.newOrder(this.id);
       }
     });
   }

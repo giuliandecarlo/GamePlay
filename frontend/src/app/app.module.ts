@@ -11,6 +11,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './components/admin/admin.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { HttpClientModule } from '@angular/common/http';
     CheckoutComponent,
     HomeComponent,
     ProductComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,108 @@
+<h4 class="text-uppercase"><strong>Tabella ordini recenti:</strong></h4>
+<table class="table">
+    <thead class="p-3 mb-2 bg-danger text-white">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Prodotto</th>
+        <th scope="col">Totale</th>
+        <th scope="col">Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of order.slice(0,10);">
+        <th scope="row">{{o.id}}</th>
+        <td>{{o.nome_prodotto}}</td>
+        <td>{{o.totale_ordine}}€</td>
+        <td>{{o.data_ordine.substr(0,10)}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="text-uppercase"><strong>Tabella prodotti:</strong></h4>
+<table class="table">
+    <thead class="p-3 mb-2 bg-danger text-white">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Immagine primaria</th>
+        <th scope="col">Immagini secondarie</th>
+        <th scope="col">Descrizione</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col">Quantità</th>
+        <th scope="col">Id Categoria</th>
+        <th scope="col"><button class="btn btn-success" (click)="addProd();">AGGIUNGI</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.nome}}</td>
+        <td>{{p.immagine_principale}}</td>
+        <td>{{p.immagini_secondarie.substr(0,30)}}</td>
+        <td>{{p.descrizione.substr(0,30)}}</td>
+        <td>{{p.prezzo}}</td>
+        <td>{{p.quantita}}</td>
+        <td>{{p.id_categoria}}</td>
+        <td><button class="btn btn-warning btn-block" (click)="editProd(p.id)">MODIFICA</button><button class="btn btn-danger btn-block" (click)="deleteProd(p.id);">ELIMINA</button></td>
+      </tr>
+    </tbody>
+</table>
+  <div *ngIf="edit">
+    <h4 class="text-uppercase"><strong>Modifica prodotto:</strong></h4>
+        <div class="col-md-7">
+            <div class="form-group">
+                <label>Titolo:</label>
+                <input type="text" placeholder="Titolo prodotto"  [(ngModel)]="productEdit.nome" size="30">
+            <div class="form-group">
+                <label>Immagine principale:</label>
+                <input type="text" placeholder="Immagine principale" [(ngModel)]="productEdit.immagine_principale" size="50">
+            </div>
+            <div class="form-group">
+                <label>Immagine secondarie:</label>
+                <input type="text" placeholder="Immagini secondarie" [(ngModel)]="productEdit.immagini_secondarie" size="50">
+            </div>
+            <div class="form-group">
+                <label>Descrizione:</label>
+                <input type="text" placeholder="Descrizione prodotto" [(ngModel)]="productEdit.descrizione" size="50">
+            </div>
+            <div class="form-group">
+                <label>Prezzo:</label>
+                <input type="number" placeholder="Prezzo" [(ngModel)]="productEdit.prezzo" size="3px">
+            </div>
+            <div class="form-group">
+                <label>Quantità:</label>
+                <input type="number" placeholder="Quantità" [(ngModel)]="productEdit.quantita" size="3px">
+            </div>
+            <button class="btn btn-success" (click)="saveEditing();">SALVA</button>
+  </div>
+  </div>
+  </div>
+  <div *ngIf="addBool">
+         <h4 class="text-uppercase"><strong>Aggiungi un nuovo prodotto:</strong></h4>
+        <div class="col-md-7">
+            <div class="form-group">
+                <label>Titolo:</label>
+                <input type="text" placeholder="Titolo prodotto"  [(ngModel)]="newProdnome" size="30">
+            <div class="form-group">
+                <label>Immagine principale:</label>
+                <input type="text" placeholder="Immagine principale" [(ngModel)]="newProdimmagine_principale" size="50">
+            </div>
+            <div class="form-group">
+                <label>Immagine secondarie:</label>
+                <input type="text" placeholder="Immagini secondarie" [(ngModel)]="newProdimmagini_secondarie" size="50">
+            </div>
+            <div class="form-group">
+                <label>Descrizione:</label>
+                <input type="text" placeholder="Descrizione prodotto" [(ngModel)]="newProddescrizione" size="50">
+            </div>
+            <div class="form-group">
+                <label>Prezzo:</label>
+                <input type="number" placeholder="Prezzo" [(ngModel)]="newProdprezzo" size="3px">
+            </div>
+            <div class="form-group">
+                <label>Quantità:</label>
+                <input type="number" placeholder="Quantità" [(ngModel)]="newProdquantita" size="3px">
+            </div>
+            <button class="btn btn-success" (click)="saveNew();">SALVA</button>
+  </div>
+
+  

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './components/admin/admin.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 import { ProductComponent } from './components/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { profileGuard } from './profile.guard';
 
 const routes: Routes = [
   {
@@ -17,6 +20,12 @@ const routes: Routes = [
   },
   {
     path: 'thankyou', component: ThankyouComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'admin', component: AdminComponent, canActivate:[profileGuard]
   },
 ];
 
