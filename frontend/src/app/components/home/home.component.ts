@@ -14,17 +14,17 @@ export class HomeComponent implements OnInit{
   constructor(private productService: ProductService,
               private router: Router) {}
 
-ngOnInit(): void {
+ngOnInit(): void { //Funzione che viene eseguita subito
   this.productService.getAllProducts().subscribe((prods:ServerResponse)=> {
     this.products =prods.products;
     console.log(this.products);
 
     });
   }
-selectProduct(id:number){
+selectProduct(id:number){ //Manda al prodotto
   this.router.navigate(['/product',id]).then();
 }
-ShopNow(id:number){
+ShopNow(id:number){ //Manda al checkout del prodotto
   this.router.navigate(['/checkout',id]).then();
 }
 }

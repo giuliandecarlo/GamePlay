@@ -80,8 +80,9 @@
          <h4 class="text-uppercase"><strong>Aggiungi un nuovo prodotto:</strong></h4>
         <div class="col-md-7">
             <div class="form-group">
-                <label>Titolo:</label>
+                <label >Titolo:</label>
                 <input type="text" placeholder="Titolo prodotto"  [(ngModel)]="newProdnome" size="30">
+            </div>
             <div class="form-group">
                 <label>Immagine principale:</label>
                 <input type="text" placeholder="Immagine principale" [(ngModel)]="newProdimmagine_principale" size="50">
@@ -89,6 +90,16 @@
             <div class="form-group">
                 <label>Immagine secondarie:</label>
                 <input type="text" placeholder="Immagini secondarie" [(ngModel)]="newProdimmagini_secondarie" size="50">
+            </div>
+            <div class="form-group">
+              <label >Categoria:</label>
+                <select id="categoria" name="categoria" [(ngModel)]="newProdcategoria">
+                  <option value="1">Console</option>
+                  <option value="2">Accessori</option>
+                  <option value="3">Giochi XBOX</option>
+                  <option value="4">Giochi PlayStation</option>
+                  <option value="5">Giochi PC</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>Descrizione:</label>
@@ -102,7 +113,9 @@
                 <label>Quantità:</label>
                 <input type="number" placeholder="Quantità" [(ngModel)]="newProdquantita" size="3px">
             </div>
+          </div>
             <button class="btn btn-success" (click)="saveNew();">SALVA</button>
-  </div>
+  
+</div>
 
   

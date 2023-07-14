@@ -56,21 +56,21 @@ export class ProductComponent implements OnInit, AfterViewInit{
 	}
   }
 
-  ngOnInit():void{
+  ngOnInit():void{ //Funzione che viene eseguita subito
     this.actrouter.paramMap.pipe(map((param:ParamMap)=>{
       // @ts-ignore
       return param.params.id;
     })).subscribe(prodId =>{
       this.id = prodId;
-      this.productService.getSingleProduct(this.id).subscribe(prod=>{
+      this.productService.getSingleProduct(this.id).subscribe(prod=>{ //Si ottiene il prodotto
         this.product = prod;
         if(prod.immagini_secondarie !== null){
-          this.thumbImages = prod.immagini_secondarie.split(';');
+          this.thumbImages = prod.immagini_secondarie.split(';'); //La stringa contenente i link delle immagini secondarie viene divisa tramite split
         }
       })
     });
   }
-  ShopNow(id:number){
+  ShopNow(id:number){ //Manda al checkout del prodotto
     this.router.navigate(['/checkout/',id]).then();
   }
 }

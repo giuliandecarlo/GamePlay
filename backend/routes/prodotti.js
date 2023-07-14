@@ -79,27 +79,13 @@ const { database } = require('../config/helpers');
   });
 
 //Si ottengono tutti prodotti di una specifica categoria:
-router.get('/categoria/:nomeCat',(req,res)=>{
-  let page = (req.query.page != undefined && req.query.page != 0 ) ? req.query.page : 1; //impostata la pagina attuale
-    const limit = (req.query.limit != undefined && req.query.limit != 0) ? req.query.limit : 10; //impostato un limite di prodotti per pagina
-
-    let startValue;
-    let endValue;
-
-    if (page > 0) {
-      startValue = (page * limit ) - limit;
-      endValue = page * limit;
-    }else{
-      startValue = 0;
-      endValue = 10;
-    }
-  
-  const titoloCat = req.params.nomeCat;
+router.get('/categoria/:idCat',(req,res)=>{  
+  const idCat = req.params.idCat;
 
     database.table('prodotti as p')
     .join([{
       table: 'categorie as c',
-      on: `c.id = p.id_categoria WHERE c.title LIKE '%${titoloCat}%`
+      on: `c.id = p.id_categoria WHERE c.id=${idCat}`
     }])
     .withFields(field=['c.titolo as categoria',
     'p.titolo as nome',
@@ -107,9 +93,9 @@ router.get('/categoria/:nomeCat',(req,res)=>{
     'p.prezzo',
     'p.quantita',
     'p.immagine_principale',
-    'p.id'
+    'p.id',
+    'p.id_categoria'
   ])
-  .slice(startValue, endValue)
   .sort({id: .1})
   .getAll()
   .then(prods =>{
@@ -162,7 +148,7 @@ router.post('/new',(req,res)=>{
     descrizione:req.body.descrizione,
     prezzo:req.body.prezzo,
     quantita:req.body.quantita,
-    id_categoria:4,
+    id_categoria:req.body.categoria,
     descrizione_breve: "gioco"
     }).catch(err=> console.log(err));
     console.log("Prodotto caricato");   
@@ -181,7 +167,7 @@ router.delete('/del/:prodId',(req,res)=>{
 router.get('/search/:keyword', function(req, res) {
   let key = req.params.keyword;
   console.log(key)
-  database.table('prodotti').filter({titolo:{$like: key+'%'}})
+  database.table('prodotti').filter({titolo:{$like: '%'+key+'%'}})
   .getAll()
   .then(prods =>{
     console.log(prods);

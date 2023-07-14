@@ -4,12 +4,12 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +333 3333 333</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> giulian.decarlo@studenti.unipg.it</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> Perugia</a></li>
+						<li><a href="/"><i class="fa fa-phone"></i> +333 3333 333</a></li>
+						<li><a href="/"><i class="fa fa-envelope-o"></i> giulian.decarlo@studenti.unipg.it</a></li>
+						<li><a href="/"><i class="fa fa-map-marker"></i> Perugia</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> EUR</a></li>
+						<li><a href="/"><i class="fa fa-euro"></i> EUR</a></li>
 						<li><a href="/login"><i class="fa fa-user-o"></i> Sezione Admin</a></li>
 					</ul>
 				</div>
@@ -25,7 +25,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="/" class="logo">
 									<img src="/assets/img/logo.png" weigth="180px" height="45px" alt="">
 								</a>
 							</div>
@@ -38,28 +38,15 @@
 								<form>
 									<input type="text" class="input" placeholder="Cerca Prodotti" (keyup)="searchBar($event)">
 									<button id="abc" class="search-btn">Cerca</button>
-									<div *ngFor='let ps of products_search' class="dropdown-content" style="position:absolute;max-width:280px;min-width:280px;  background:white">
-										<a class="dropdown-item " style="cursor: pointer;" href="/product/{{ps.id}}" >{{ps.titolo.substr(0,28)}}</a>
+									<div *ngFor="let ps of products_search">
+										<div class="dropdown-content" style="position:absolute;max-width:280px;min-width:280px;  background:white">
+										<a class="dropdown-item" style="cursor: pointer;" href="/product/{{ps.id}}" >{{ps.titolo.substr(0,28)}}</a>
+										</div>
 									</div>
 								</form>
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
-
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
-								<!-- /Menu Toogle -->
-							</div>
-						</div>
-						<!-- /ACCOUNT -->
 					</div>
 					<!-- row -->
 				</div>
@@ -77,13 +64,13 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav py-3">
-						<li class="active"><a routerLink="/">Home</a></li>
-						<li><a href="#">Giochi XBOX</a></li>
-						<li><a href="#">Giochi PlayStation</a></li>
-						<li><a href="#">Giochi PC</a></li>
+						<li ><a routerLink="/">Home</a></li>
+						<li><a href="/categories/3">Giochi XBOX</a></li>
+						<li><a href="/categories/4">Giochi PlayStation</a></li>
+						<li><a href="/categories/5">Giochi PC</a></li>
 						<li><a href="#">Console</a></li>
 						<li><a href="#">Accessori</a></li>
-						<li><a href="#">Contattaci</a></li>
+						<li><a href="/">Contattaci</a></li>
 					</ul>
 					<!-- /NAV -->
 				</div>

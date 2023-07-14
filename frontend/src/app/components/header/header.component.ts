@@ -14,14 +14,14 @@ export class HeaderComponent {
               private router: Router) {}
   products_search:any;
 
-  //Funzione che ad ogni carattere digitato viene richiamato per cercare i prodotti
+  //Funzione che ad ogni carattere digitato viene richiamata per cercare i prodotti
   searchBar(event: any){
     this.productService.getSearchProducts(event.target.value).subscribe((prods:ServerResponse)=> {
       this.products_search =prods.products;
       console.log(this.products_search);
       });
   }
-  selectProduct(id:number){
+  selectProduct(id:number){ //Manda al prodotto
     this.router.navigate(['/product',id]).then();
   }
 }

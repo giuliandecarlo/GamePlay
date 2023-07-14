@@ -68,13 +68,6 @@ router.post('/new',async(req,res)=>{
     console.log("Ordine caricato");   
   });
 
-// Finto pagamento:
-router.post('/payment',(req,res)=>{
-  setTimeout(()=>{
-    res.status(200).json({success: true});
-  },3000);
-});
-
 // Si ottiene l'utente con username e password:
 router.get('/log',async(req,res)=> {
   let user = req.query.username;

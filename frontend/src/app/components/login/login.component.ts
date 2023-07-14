@@ -17,7 +17,7 @@ export class LoginComponent {
               private userService: UserService,
               private route: ActivatedRoute){}
   
-  ngOnInit(){
+  ngOnInit(){ //Funzione che viene eseguita subito
     this.userService.authState$.subscribe(authState=>{
       if(authState){
         this.router.navigateByUrl(this.route.snapshot.queryParams['returnUrl'] || '/admin');
@@ -35,6 +35,6 @@ export class LoginComponent {
 
     form.reset();
     this.userService.loginUser(email,password);
-    this.err=true;
+    this.err=true; //Se dati errati attiva la sezione che mostra l'errore
   }
 }
