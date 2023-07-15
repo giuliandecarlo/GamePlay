@@ -34,7 +34,7 @@ export class CheckoutComponent {
   Complete(id:number):void{ //ordine completato
     this.productService.removeQuantity(id).subscribe(resu=>{ //riduce la quantità del prodotto nel database
       console.log(resu);
-      if(resu === 'Quantità modificata'){
+      if(resu === 304){
         this.router.navigate(['/thankyou/']).then(); //manda alla pagina thankyou
         this.orderService.newOrder(this.id);
       }

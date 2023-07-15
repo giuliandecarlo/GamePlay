@@ -5,7 +5,7 @@ const { database } = require('../config/helpers');
 // Si ottengono tutti prodotti:
   router.get('/', function(req, res) {
     let page = (req.query.page != undefined && req.query.page != 0 ) ? req.query.page : 1; //impostata la pagina attuale
-    const limit = (req.query.limit != undefined && req.query.limit != 0) ? req.query.limit : 10; //impostato un limite di prodotti per pagina
+    const limit = (req.query.limit != undefined && req.query.limit != 0) ? req.query.limit : 12; //impostato un limite di prodotti per pagina
 
     let startValue;
     let endValue;
@@ -15,7 +15,7 @@ const { database } = require('../config/helpers');
       endValue = page * limit;
     }else{
       startValue = 0;
-      endValue = 10;
+      endValue = 12;
     }
 
     database.table('prodotti as p')
@@ -115,7 +115,7 @@ router.patch('/sold/:prodId',async(req,res)=> {
   let prodId = req.params.prodId;
   let idp = await database.table('prodotti').filter({id:prodId}).get();
   database.table('prodotti').filter({id: prodId}).update({quantita:idp.quantita-1})
-  .then(result =>res.json('Quantità modificata')).catch(err => res.json(err));
+  .then(result =>res.json(304)).catch(err => res.json(err));
 });
 
 // Si modifica il prodotto dalla sezione admin

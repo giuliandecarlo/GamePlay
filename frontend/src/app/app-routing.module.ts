@@ -31,6 +31,9 @@ const routes: Routes = [
   {
     path: 'categories/:id', component: CategoriesComponent
   },
+  {
+    path: '**', component: HomeComponent
+  }
 ];
 
 @NgModule({

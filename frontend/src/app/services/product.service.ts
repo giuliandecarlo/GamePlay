@@ -11,7 +11,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   // Funzione per ottenere tutti i prodotti dal backend
-  getAllProducts(numberOfResults=10){
+  getAllProducts(numberOfResults=12){
     return this.http.get<any>(this.SERVER_URL + '/prodotti',{
       params: {
         limit: numberOfResults.toString()

@@ -1,81 +1,82 @@
-		<!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="/"><i class="fa fa-phone"></i> +333 3333 333</a></li>
-						<li><a href="/"><i class="fa fa-envelope-o"></i> giulian.decarlo@studenti.unipg.it</a></li>
-						<li><a href="/"><i class="fa fa-map-marker"></i> Perugia</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="/"><i class="fa fa-euro"></i> EUR</a></li>
-						<li><a href="/login"><i class="fa fa-user-o"></i> Sezione Admin</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
+<!-- HEADER -->
+<header>
+	<!-- TOP HEADER -->
+	<div id="top-header">
+		<div class="container">
+			<ul class="header-links pull-left">
+				<li><a href="/"><i class="fa fa-phone"></i> +333 3333 333</a></li>
+				<li><a href="/"><i class="fa fa-envelope-o"></i> giulian.decarlo@studenti.unipg.it</a></li>
+				<li><a href="/"><i class="fa fa-map-marker"></i> Perugia</a></li>
+			</ul>
+			<ul class="header-links pull-right">
+				<li><a href="/"><i class="fa fa-euro"></i> EUR</a></li>
+				<li><a href="/login"><i class="fa fa-user-o"></i> Sezione Admin</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /TOP HEADER -->
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-3">
-							<div class="header-logo">
-								<a href="/" class="logo">
-									<img src="/assets/img/logo.png" weigth="180px" height="45px" alt="">
-								</a>
-							</div>
-						</div>
-						<!-- /LOGO -->
-
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<input type="text" class="input" placeholder="Cerca Prodotti" (keyup)="searchBar($event)">
-									<button id="abc" class="search-btn">Cerca</button>
-									<div *ngFor="let ps of products_search">
-										<div class="dropdown-content" style="position:absolute;max-width:280px;min-width:280px;  background:white">
-										<a class="dropdown-item" style="cursor: pointer;" href="/product/{{ps.id}}" >{{ps.titolo.substr(0,28)}}</a>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-						<!-- /SEARCH BAR -->
+	<!-- MAIN HEADER -->
+	<div id="header">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- LOGO -->
+				<div class="col-md-3">
+					<div class="header-logo">
+						<a href="/" class="logo">
+							<img src="/assets/img/logo.png" weigth="180px" height="45px" alt="">
+						</a>
 					</div>
-					<!-- row -->
 				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
+				<!-- /LOGO -->
 
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav py-3">
-						<li ><a routerLink="/">Home</a></li>
-						<li><a href="/categories/3">Giochi XBOX</a></li>
-						<li><a href="/categories/4">Giochi PlayStation</a></li>
-						<li><a href="/categories/5">Giochi PC</a></li>
-						<li><a href="#">Console</a></li>
-						<li><a href="#">Accessori</a></li>
-						<li><a href="/">Contattaci</a></li>
-					</ul>
-					<!-- /NAV -->
+				<!-- SEARCH BAR -->
+				<div class="col-md-6">
+					<div class="header-search">
+						<form>
+							<input type="text" class="input" placeholder="Cerca Prodotti" (keyup)="searchBar($event)">
+							<button id="abc" class="search-btn">Cerca</button>
+							<div *ngFor="let ps of products_search">
+								<div class="dropdown-content"
+									style="position:absolute;max-width:280px;min-width:280px;  background:white">
+									<a class="dropdown-item" style="cursor: pointer;"
+										href="/product/{{ps.id}}">{{ps.titolo.substr(0,28)}}</a>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-				<!-- /responsive-nav -->
+				<!-- /SEARCH BAR -->
 			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
+			<!-- row -->
+		</div>
+		<!-- container -->
+	</div>
+	<!-- /MAIN HEADER -->
+</header>
+<!-- /HEADER -->
+
+<!-- NAVIGATION -->
+<nav id="navigation">
+	<!-- container -->
+	<div class="container">
+		<!-- responsive-nav -->
+		<div id="responsive-nav">
+			<!-- NAV -->
+			<ul class="main-nav nav py-3">
+				<li><a routerLink="/">Home</a></li>
+				<li><a href="/categories/3">Giochi XBOX</a></li>
+				<li><a href="/categories/4">Giochi PlayStation</a></li>
+				<li><a href="/categories/5">Giochi PC</a></li>
+				<li><a href="/categories/1">Console</a></li>
+				<li><a href="/categories/2">Accessori</a></li>
+			</ul>
+			<!-- /NAV -->
+		</div>
+		<!-- /responsive-nav -->
+	</div>
+	<!-- /container -->
+</nav>
+<!-- /NAVIGATION -->
