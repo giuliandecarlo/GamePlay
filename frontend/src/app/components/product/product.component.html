@@ -1,10 +1,6 @@
-<!-- SECTION -->
 <div class="section">
-    <!-- container -->
     <div class="container">
-        <!-- row -->
         <div class="row">
-            <!-- Product main img -->
             <div class="col-md-5 col-md-push-2">
                 <div id="product-main-img">
                     <ng-template [ngIf]="thumbImages.length === 0">
@@ -20,9 +16,7 @@
                     </ng-template>
                 </div>
             </div>
-            <!-- /Product main img -->
 
-            <!-- Product thumb imgs -->
             <div class="col-md-2  col-md-pull-5">
                 <ng-template [ngIf]="thumbImages.length >0">
                     <div id="product-imgs">
@@ -39,9 +33,7 @@
                     </div>
                 </ng-template>
             </div>
-            <!-- /Product thumb imgs -->
 
-            <!-- Product details -->
             <div class="col-md-5">
                 <div class="product-details">
                     <h2 class="product-name">{{product.nome}}</h2>
@@ -61,11 +53,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- /Product details -->
 
         </div>
-        <!-- /row -->
     </div>
-    <!-- /container -->
 </div>
-<!-- /SECTION -->

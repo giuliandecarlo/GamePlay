@@ -1,10 +1,6 @@
-<!-- SECTION -->
 <div class="section">
-	<!-- container -->
 	<div class="container">
-		<!-- row -->
 		<div class="row">
-			<!-- shop -->
 			<div class="col-md-4 col-xs-6">
 				<div class="shop">
 					<div class="shop-img">
@@ -12,13 +8,12 @@
 					</div>
 					<div class="shop-body">
 						<h3>Collezione<br>Giochi XBOX</h3>
-						<a href="/categories/3" class="cta-btn">Acquista Ora <i class="fa fa-arrow-circle-right"></i></a>
+						<a href="/categories/3" class="cta-btn">Acquista Ora <i
+								class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
-			<!-- /shop -->
 
-			<!-- shop -->
 			<div class="col-md-4 col-xs-6">
 				<div class="shop">
 					<div class="shop-img">
@@ -26,13 +21,12 @@
 					</div>
 					<div class="shop-body">
 						<h3>Collezione<br>Giochi PS5</h3>
-						<a href="/categories/4" class="cta-btn">Acquista Ora <i class="fa fa-arrow-circle-right"></i></a>
+						<a href="/categories/4" class="cta-btn">Acquista Ora <i
+								class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
-			<!-- /shop -->
 
-			<!-- shop -->
 			<div class="col-md-4 col-xs-6">
 				<div class="shop">
 					<div class="shop-img">
@@ -40,38 +34,30 @@
 					</div>
 					<div class="shop-body">
 						<h3>Collezione<br>Giochi PC</h3>
-						<a href="/categories/5" class="cta-btn">Acquista Ora <i class="fa fa-arrow-circle-right"></i></a>
+						<a href="/categories/5" class="cta-btn">Acquista Ora <i
+								class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
-			<!-- /shop -->
 		</div>
-		<!-- /row -->
 	</div>
-	<!-- /container -->
 </div>
-<!-- /SECTION -->
 
-<!-- SECTION -->
 <div class="section">
-	<!-- container -->
 	<div class="container">
-		<!-- row -->
 		<div class="row">
-			<!-- section title -->
 			<div class="col-md-12">
 				<div class="section-title">
 					<h3 class="title">{{products[0].categoria}}:</h3>
 				</div>
 			</div>
-			<!-- /section title -->
 
-			<!-- Products tab & slick -->
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-4 col-sm-6" *ngFor="let p of products">
-						<div  class="card my-2 " >
-							<img [src]="p.immagine_principale" height="400px" alt="{{p.nome}}" class="card-img-top" style="cursor: pointer;" (click)="selectProduct(p.id)">
+						<div class="card my-2 ">
+							<img [src]="p.immagine_principale" height="400px" alt="{{p.nome}}" class="card-img-top"
+								style="cursor: pointer;" (click)="selectProduct(p.id)">
 							<div class="card-header">
 								<div class="card-title">
 									<p>{{p.nome|titlecase}}</p>
@@ -83,30 +69,22 @@
 							</div>
 							<div class="row d-flex justify-content-center border-primary my-3">
 								<div class="col-md-6">
-									<button class="btn btn-danger"
-										[class.disabled]="p.quantita<1"
-										[class.btn-outline-danger]="p.quantita < 1" (click)="p.quantita>0 && ShopNow(p.id)">
-										{{p.quantita <1 ? "Articolo terminato" :"Acquista immediatamente"}}
-									</button>
+									<button class="btn btn-danger" [class.disabled]="p.quantita<1"
+										[class.btn-outline-danger]="p.quantita < 1"
+										(click)="p.quantita>0 && ShopNow(p.id)">
+										{{p.quantita <1 ? "Articolo terminato" :"Acquista immediatamente"}} </button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Products tab & slick -->
 		</div>
-		<!-- /row -->
 	</div>
-	<!-- /container -->
 </div>
-<!-- /SECTION -->
 
-<!-- HOT DEAL SECTION -->
 <div id="hot-deal" class="section">
-	<!-- container -->
 	<div class="container">
-		<!-- row -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hot-deal">
@@ -142,17 +120,11 @@
 				</div>
 			</div>
 		</div>
-		<!-- /row -->
 	</div>
-	<!-- /container -->
 </div>
-<!-- /HOT DEAL SECTION -->
 
-<!-- NEWSLETTER -->
 <div id="newsletter" class="section">
-	<!-- container -->
 	<div class="container">
-		<!-- row -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="newsletter">
@@ -164,8 +136,5 @@
 				</div>
 			</div>
 		</div>
-		<!-- /row -->
 	</div>
-	<!-- /container -->
 </div>
-<!-- /NEWSLETTER -->
