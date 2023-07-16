@@ -138,8 +138,13 @@ router.patch('/edit',(req,res)=> {
 
 // Aggiunta nuovo prodotto dalla sezione admin
 router.post('/new',(req,res)=>{
-  if(req.body.quantita<0){req.body.quantita=0}
-  if(req.body.prezzo<0){req.body.prezzo=0}
+  if(!req.body.nome){req.body.nome="Prodotto senza nome";}
+  if(!req.body.categoria){req.body.categoria=3;}
+  if(!req.body.immagine_principale){req.body.immagine_principale="Prodotto senza immagine";}
+  if(!req.body.immagini_secondarie){req.body.immagini_secondarie="Prodotto senza immagini";}
+  if(!req.body.descrizione){req.body.descrizione="Prodotto senza descrizione";}
+  if(req.body.quantita<0 || !req.body.quantita){req.body.quantita=0}
+  if(req.body.prezzo<0 || !req.body.prezzo){req.body.prezzo=0}
     database.table('prodotti')
     .insert({
     titolo:req.body.nome,
@@ -166,7 +171,6 @@ router.delete('/del/:prodId',(req,res)=>{
 // Si ottiene l'elenco dei prodotti in base alla ricerca
 router.get('/search/:keyword', function(req, res) {
   let key = req.params.keyword;
-  console.log(key)
   database.table('prodotti').filter({titolo:{$like: '%'+key+'%'}})
   .getAll()
   .then(prods =>{

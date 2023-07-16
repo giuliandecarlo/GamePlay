@@ -14,7 +14,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {}
   loginUser(email:string,password:string){
-      this.httpClient.get<any>(this.SERVER_URL+'/ordini/log/',{
+      this.httpClient.get<any>(this.SERVER_URL+'/utenti/log/',{
         params: {
           username: email,
           password: password

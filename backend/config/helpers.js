@@ -1,6 +1,6 @@
 const Mysqli = require('mysqli');
 
-let conn = new Mysqli({
+let conn = new Mysqli({ //Dati per l'accesso al Database
     host: 'localhost',
     post: 3306,
     user: 'root',

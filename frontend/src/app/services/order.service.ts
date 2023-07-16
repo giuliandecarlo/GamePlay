@@ -15,10 +15,10 @@ export class OrderService {
     constructor(private http: HttpClient){}
 
     getSingleOrder(IdOrdine: number){
-        return this.http.get<any>(this.SERVER_URL+'/ordini'+IdOrdine)
+        return this.http.get<any>(this.SERVER_URL+'/ordini'+IdOrdine);
     }
     getAllOrders(){
-        return this.http.get<any>(this.SERVER_URL+'/ordini')
+        return this.http.get<any>(this.SERVER_URL+'/ordini');
     }
     newOrder(id:number){
         return this.http.post<any>(this.SERVER_URL+'/ordini/new',{idProd:id}).subscribe();

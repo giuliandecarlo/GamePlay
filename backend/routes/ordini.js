@@ -68,23 +68,5 @@ router.post('/new',async(req,res)=>{
     console.log("Ordine caricato");   
   });
 
-// Si ottiene l'utente con username e password:
-router.get('/log',async(req,res)=> {
-  let user = req.query.username;
-  let pw = req.query.password;
-  console.log(user+" "+pw)
-  await database.table('utente')
-  .filter({
-    $and: [
-      {username:user},
-      {password:pw}
-    ]}).get()
-.then(prod =>{
-  if(prod){
-    res.status(200).json(prod);
-  }else{
-    res.json({message: 'Account non trovato'});
-  }
-}).catch(err => console.log(err));
-});
+
 module.exports = router;
