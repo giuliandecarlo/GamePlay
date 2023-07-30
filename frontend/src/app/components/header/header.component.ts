@@ -18,7 +18,7 @@ export class HeaderComponent {
   searchBar(event: any){
     this.productService.getSearchProducts(event.target.value).subscribe((prods:ServerResponse)=> {
       this.products_search =prods.products;
-      console.log(this.products_search);
+      //console.log(this.products_search);
       });
   }
   selectProduct(id:number){ //Manda al prodotto
