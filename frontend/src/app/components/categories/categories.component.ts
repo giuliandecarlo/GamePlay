@@ -16,7 +16,7 @@ export class CategoriesComponent implements OnInit{
               private router: Router,
               private actrouter: ActivatedRoute,) {}
 
-ngOnInit(): void {
+ngOnInit(): void { //Funzione che viene eseguita subito
   this.actrouter.paramMap.pipe(map((param:ParamMap)=>{
     // @ts-ignore
     return param.params.id;

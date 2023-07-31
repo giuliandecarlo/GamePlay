@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 export class UserService {
   SERVER_URL="http://localhost:3000/api";
   auth = false;
-  private user:any;
   authState$ = new BehaviorSubject<boolean>(this.auth);
   userData$ = new BehaviorSubject<any>(null);
 
