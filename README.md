@@ -1,7 +1,8 @@
 # Gameplay
 
-The project consists of a web application that serves as a commercial platform for selling video games and consoles. Project done for web and mobile programming exam. The application targets two types of users: customers and site administrators.
 ![Logo](/img/logo.png)
+
+The project consists of a web application that serves as a commercial platform for selling video games and consoles. Project done for web and mobile programming exam. The application targets two types of users: customers and site administrators.
 
 ## Customer Features
 
