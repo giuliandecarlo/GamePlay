@@ -1,6 +1,6 @@
 # <center>GamePlay</center>
 
-<img src='img/img0.png' width='40%' style="margin-left:30%;">
+<img src='img/logo1.png' width='40%' style="margin-left:30%;">
 
 The project consists of a web application that serves as a commercial platform for selling video games and consoles. Project done for web and mobile programming exam. The application targets two types of users: customers and site administrators.
 
